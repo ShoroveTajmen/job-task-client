@@ -4,11 +4,13 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic/useAxiosPublic";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import AllTask from "./AllTask";
+import useAllTask from "../../Hooks/useAxiosPublic/useAllTask/useAllTask";
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
   //console.log(user);
   const axiosPublic = useAxiosPublic();
+  const [todoData, refetch] = useAllTask();
   const {
     register,
     handleSubmit,
@@ -33,6 +35,7 @@ const Dashboard = () => {
       if (res.data.insertedId) {
         console.log("user added to the database");
         reset();
+        refetch();
         Swal.fire({
           position: "center",
           icon: "success",

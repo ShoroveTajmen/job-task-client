@@ -2,27 +2,43 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic/useAxiosPublic";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
+import useAllTask from "../../Hooks/useAxiosPublic/useAllTask/useAllTask";
 
 const AllTask = () => {
   const { user } = useContext(AuthContext);
   //using tanstack query to get all data
   const axiosPublic = useAxiosPublic();
-  const {
-    data: todoData = [],
-    refetch,
-    isLoading,
-  } = useQuery({
-    queryKey: ["todo", user.email],
-    queryFn: async () => {
-      const res = await axiosPublic.get(`/data?userEmail=${user.email}`);
-      //   refetch();
-      return res.data;
-    },
-  });
+  const [todoData, refetch, isLoading] = useAllTask();
   if (isLoading) {
     return <p>Hello</p>;
   }
-  console.log(todoData);
+  //console.log(todoData);
+
+  const deleteTodo = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosPublic.delete(`/data/${_id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+              title: "Deleted!",
+              text: "Todo Data has been deleted.",
+              icon: "success",
+            });
+          }
+        });
+      }
+    });
+  };
 
   return (
     <div className="mt-[30px] ml-[10px]">
@@ -45,7 +61,10 @@ const AllTask = () => {
               <button className="btn btn-sm mr-3 bg-[#4AA96C] border-none text-white font-bold">
                 Edit
               </button>
-              <button className="btn btn-sm bg-[#FA7F72] border-none text-white font-bold">
+              <button
+                onClick={() => deleteTodo(data?._id)}
+                className="btn btn-sm bg-[#FA7F72] border-none text-white font-bold"
+              >
                 Delete
               </button>
             </div>
