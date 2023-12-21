@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const SocialLogin = () => {
   const { googleLogin } = useContext(AuthContext);
@@ -11,12 +11,12 @@ const SocialLogin = () => {
     login()
       .then((res) => {
         console.log(res);
-        toast.success("Login Successful");
+        Swal.fire("Login Successful", "success");
         navigate("/");
       })
       .catch((error) => {
         console.log(error);
-        toast.error(error.message);
+        Swal.fire(error.message);
       });
   };
 
@@ -36,7 +36,6 @@ const SocialLogin = () => {
           />
         </button>
       </div>
-      <ToastContainer></ToastContainer>
     </div>
   );
 };
