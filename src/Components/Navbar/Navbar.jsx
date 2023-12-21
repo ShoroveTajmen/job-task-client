@@ -32,7 +32,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/products"
+                to="/dashboard"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -63,7 +63,7 @@ const Navbar = () => {
           <div className="">
             {user?.email ? (
               <div className="flex gap-4 justify-center items-center w-[300px] ml-[80px] md:ml-0">
-                <div className=" rounded-full">
+                <div className=" rounded-full border-2 border-[#E86A33]">
                   <img
                     className="rounded-full w-[90px] h-[50px]"
                     src={user.photoURL}
