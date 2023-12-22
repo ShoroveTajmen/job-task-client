@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import useAllTask from "../../Hooks/useAxiosPublic/useAllTask/useAllTask";
+import { Link } from "react-router-dom";
 
 const AllTask = () => {
   const { user } = useContext(AuthContext);
@@ -58,9 +59,11 @@ const AllTask = () => {
               </h1>
             </div>
             <div className="mt-[50px] mr-3">
-              <button className="btn btn-sm mr-3 bg-[#4AA96C] border-none text-white font-bold">
-                Edit
-              </button>
+              <Link to={`editTodo/${data?._id}`}>
+                <button className="btn btn-sm mr-3 bg-[#4AA96C] border-none text-white font-bold">
+                  Edit
+                </button>
+              </Link>
               <button
                 onClick={() => deleteTodo(data?._id)}
                 className="btn btn-sm bg-[#FA7F72] border-none text-white font-bold"

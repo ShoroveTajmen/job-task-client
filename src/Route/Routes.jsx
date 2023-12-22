@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import EditTodo from "../Pages/Dashboard/EditTodo";
 
 const myCreateRoutes = createBrowserRouter([
   {
@@ -36,6 +37,12 @@ const myCreateRoutes = createBrowserRouter([
         <Dashboard></Dashboard>
       </PrivateRoute>
     ),
+  },
+  {
+    path: "dashboard/editTodo/:id",
+    element: <EditTodo></EditTodo>,
+    loader: ({ params }) =>
+      fetch(`http://localhost:5000/data/${params.id}`),
   },
 ]);
 
