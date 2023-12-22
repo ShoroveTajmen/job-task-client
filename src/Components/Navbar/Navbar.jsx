@@ -7,9 +7,9 @@ const Navbar = () => {
   // console.log(user);
   return (
     <div>
-      <nav className="flex flex-col md:flex-row md:justify-between md:items-center py-3 md:py-2  md:px-5 md:ml-0 bg-[#FFF4F4]">
+      <nav className="flex flex-col md:flex-col lg:flex-row md:justify-between md:items-center py-3 md:py-2  md:px-5 md:ml-0 bg-[#FFF4F4]">
         <div className="flex">
-          <h1 className="btn btn-ghost text-[40px] text-[#E86A33] ml-[120px] md:ml-[0px] lg:ml-[0px] font-bold">
+          <h1 className="btn btn-ghost text-[40px] text-[#E86A33] ml-[70px] md:ml-[0px] lg:ml-[0px] font-bold mb-[10px] md:mb-[0px] lg:mb-[0px]">
             OrganizePilot
           </h1>
         </div>
@@ -47,13 +47,13 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* register andlogin */}
+        {/* register and login */}
         <div className="flex  lg:w-[700px] font-bold text-lg flex-col md:flex-row md:justify-end  md:items-center ">
           {/* Register */}
 
           <div className="mb-3 md:mb-0 ml-[180px] md:ml-0 mr-[5px]">
             <Link to="/register">
-              <button className=" btn-sm bg-[#41644A] text-white uppercase font-bold">
+              <button className=" btn-sm bg-[#41644A] text-white uppercase font-bold mt-[10px] md:mt-[10px] lg:mt-[0px]">
                 Register
               </button>
             </Link>
@@ -91,7 +91,7 @@ const Navbar = () => {
               </div>
             ) : (
               <Link to="/login">
-                <button className=" btn-sm bg-[#41644A] text-white uppercase font-bold lg:ml-[5px] md:ml-0 ml-[190px]">
+                <button className=" btn-sm bg-[#41644A] text-white uppercase font-bold lg:ml-[5px] md:ml-0 ml-[190px] mt-[10px] md:mt-[10px] lg:mt-[0px]">
                   Login
                 </button>
               </Link>

@@ -76,12 +76,12 @@ const onSubmit = async(data) => {
 
   return (
     <div>
-      <div className="w-[1800px] h-screen mx-auto  bg-[#413F42] rounded-[30px]">
+      <div className="lg:w-[1800px] lg:h-screen h-[800px] mx-auto  bg-[#413F42] rounded-[30px]">
         <div className="">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex gap-2 ml-[100px] p-[250px]">
+            <div className="flex lg:flex-row flex-col gap-2 ml-[10px]">
               {/* task name */}
-              <div className="">
+              <div className="mt-[30px]">
                 <label className="label">
                   <span className="label-text text-white font-bold">
                     Task Name
@@ -100,7 +100,7 @@ const onSubmit = async(data) => {
                 )}
               </div>
               {/* task description */}
-              <div className="">
+              <div className="lg:mt-[30px]">
                 <label className="label">
                   <span className="label-text text-white font-bold">
                     Description
@@ -119,7 +119,7 @@ const onSubmit = async(data) => {
                 )}
               </div>
               {/* task deadline */}
-              <div className="">
+              <div className="lg:mt-[30px]">
                 <label className="label">
                   <span className="label-text text-white font-bold">
                     Deadline
@@ -138,7 +138,7 @@ const onSubmit = async(data) => {
                 )}
               </div>
               {/* task priority */}
-              <div className="">
+              <div className="lg:mt-[30px]">
                 <label className="label">
                   <span className="label-text text-white font-bold">
                     Priority
@@ -161,7 +161,7 @@ const onSubmit = async(data) => {
                   <option>High</option>
                 </select>
               </div>
-              <div className="mt-[35px]">
+              <div className="mt-[35px] lg:mt-[70px]">
                 <input
                   className="btn btn-sm bg-[#E86A33] border-none text-white font-bold"
                   type="submit"

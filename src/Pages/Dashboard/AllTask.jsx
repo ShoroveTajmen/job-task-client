@@ -44,7 +44,7 @@ const AllTask = () => {
   return (
     <div className="mt-[30px] ml-[10px]">
       {todoData?.map((data) => (
-        <div key={data._id} className="w-[500px] h-[120px] bg-[#7F8487] mb-2">
+        <div key={data._id} className="lg:w-[500px] md:w-[500px] w-[400px] h-[120px] bg-[#7F8487] mb-2">
           <div className="flex justify-between">
             <div className="ml-2">
               <h1 className="text-[25px] font-bold ">{data?.name}</h1>

@@ -11,9 +11,9 @@ const Banner = () => {
 
   return (
     <div>
-      <div className="h-[600px] w-full mt-[50px] bg-gradient-to-r from-[#F9E8D9] via-[#F7B787] to-[#9FBB73] ...">
-        <div className="flex justify-evenly items-center" data-aos="zoom-in">
-          <div className="ml-[200px] mt-[100px]">
+      <div className="h-[850px] md:h-[850px] lg:h-[600px] w-full mt-[50px] bg-gradient-to-r from-[#F9E8D9] via-[#F7B787] to-[#9FBB73] ...">
+        <div className="flex lg:flex-row flex-col justify-evenly items-center" data-aos="zoom-in">
+          <div className="ml-[10px] md:ml-[10px] lg:ml-[200px] mt-[100px] mb-[20px] md:mb-[20px] lg:mb-[0px]">
             <img
               className="w-[200px] h-[200px]"
               src="https://i.ibb.co/jwjsJDx/list.png"

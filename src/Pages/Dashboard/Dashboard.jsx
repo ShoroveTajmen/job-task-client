@@ -50,14 +50,14 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="w-[1800px] h-screen mx-auto  bg-[#413F42] rounded-[30px]">
-        <figure className="ml-[1300px] py-[20px]">
+      <div className="lg:w-[1800px] lg:h-screen h-[2000px]  mx-auto  bg-[#413F42] rounded-[30px]">
+        <figure className="ml-[20px] mb-[50px] py-[20px]">
           <img
             src={user.photoURL}
             alt={user.displayName}
             className="rounded-full w-[60px] h-[60px] border-4 border-[#E86A33]"
           />
-          <h1 className="text-white font-bold text-[13px] text-center">
+          <h1 className="text-white font-bold text-[13px] ">
             {user.displayName}
           </h1>
         </figure>
@@ -65,7 +65,7 @@ const Dashboard = () => {
         <div>
           <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="flex gap-2 ml-[10px]">
+              <div className="flex lg:flex-row flex-col gap-2 ml-[10px]">
                 {/* task name */}
                 <div className="">
                   <label className="label">

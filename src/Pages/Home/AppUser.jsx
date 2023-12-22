@@ -8,11 +8,11 @@ const AppUser = () => {
       }, []);
   return (
     <div>
-      <div className="h-[600px] w-full mt-[50px] " data-aos="zoom-in">
+      <div className="h-[1300px] md:h-[1300px] lg:h-[600px] w-full mt-[50px]" data-aos="zoom-in">
         <h1 className="text-center text-[40px] font-bold text-[#DC5F00]">
           Those will be Benifited
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 w-[1300px] mt-[70px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 w-[1300px] mt-[70px] mx-auto gap-5 ml-[20px] md:ml-[170px] lg:ml-[150px]">
           <div className="card card-compact w-96 bg-base-100 shadow-xl">
             <figure>
               <img
