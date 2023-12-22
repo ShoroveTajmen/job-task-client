@@ -44,6 +44,20 @@ const Navbar = () => {
                 DASHBOARD
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-[#3a86ff] underline"
+                    : ""
+                }
+              >
+                ABOUT US
+              </NavLink>
+            </li>
           </ul>
         </div>
 

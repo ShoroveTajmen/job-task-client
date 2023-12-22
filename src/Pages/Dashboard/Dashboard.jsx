@@ -6,6 +6,10 @@ import Swal from "sweetalert2";
 import AllTask from "./AllTask";
 import useAllTask from "../../Hooks/useAxiosPublic/useAllTask/useAllTask";
 import { Link } from "react-router-dom";
+import Ongoing from "./Ongoing";
+import Completed from "./Completed";
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
@@ -49,8 +53,8 @@ const Dashboard = () => {
   };
 
   return (
-    <div>
-      <div className="lg:w-[1800px] lg:h-screen h-[2000px]  mx-auto  bg-[#413F42] rounded-[30px]">
+    <DndProvider backend={HTML5Backend}>
+      <div className="lg:w-[1800px] lg:h-[2000px] h-[2000px]  mx-auto  bg-[#413F42] rounded-[30px]">
         <figure className="ml-[20px] mb-[50px] py-[20px]">
           <img
             src={user.photoURL}
@@ -64,6 +68,7 @@ const Dashboard = () => {
 
         <div>
           <div>
+            <h1 className="text-[#FF6C22] mb-[10px] font-bold text-2xl ml-[10px]">Create Your Task Here!</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="flex lg:flex-row flex-col gap-2 ml-[10px]">
                 {/* task name */}
@@ -159,13 +164,15 @@ const Dashboard = () => {
           </div>
         </div>
         <AllTask></AllTask>
+        <Ongoing></Ongoing>
+        <Completed></Completed>
         <Link to={"/"}>
           <button className="btn ml-[10px] mt-[20px] bg-[#540375] text-white border-none font-bold">
             Back Home
           </button>
         </Link>
       </div>
-    </div>
+    </DndProvider>
   );
 };
 

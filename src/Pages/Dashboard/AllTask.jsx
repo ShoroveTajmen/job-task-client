@@ -5,12 +5,24 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import useAllTask from "../../Hooks/useAxiosPublic/useAllTask/useAllTask";
 import { Link } from "react-router-dom";
+import { useDrag } from "react-dnd";
+import { ItemTypes } from "../../ItemTypes";
 
 const AllTask = () => {
+  const [todoData, refetch, isLoading] = useAllTask();
+
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: ItemTypes.KNIGHT,
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
+  console.log(isDragging);
+
   const { user } = useContext(AuthContext);
   //using tanstack query to get all data
   const axiosPublic = useAxiosPublic();
-  const [todoData, refetch, isLoading] = useAllTask();
+
   if (isLoading) {
     return <p>Hello</p>;
   }
@@ -42,10 +54,15 @@ const AllTask = () => {
   };
 
   return (
-    <div className="mt-[30px] ml-[10px]">
+    <div  className="mt-[30px] ml-[10px]">
+      <h1 className="text-[#FF6C22] mb-[10px] font-bold text-2xl">My Tasks</h1>
       {todoData?.map((data) => (
-        <div key={data._id} className="lg:w-[500px] md:w-[500px] w-[400px] h-[120px] bg-[#7F8487] mb-2">
-          <div className="flex justify-between">
+        <div
+          
+          key={data._id}
+          className="lg:w-[500px] md:w-[500px] w-[400px] h-[120px] bg-[#7F8487] mb-2"
+        >
+          <div ref={drag} className="flex justify-between">
             <div className="ml-2">
               <h1 className="text-[25px] font-bold ">{data?.name}</h1>
               <p className="text-white">{data?.description}</p>

@@ -7,6 +7,7 @@ import Register from "../Pages/Register";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import EditTodo from "../Pages/Dashboard/EditTodo";
+import AboutUs from "../Components/AboutUs/AboutUs";
 
 const myCreateRoutes = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const myCreateRoutes = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>
+      }
     ],
   },
 
