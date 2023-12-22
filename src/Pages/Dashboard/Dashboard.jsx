@@ -8,8 +8,9 @@ import useAllTask from "../../Hooks/useAxiosPublic/useAllTask/useAllTask";
 import { Link } from "react-router-dom";
 import Ongoing from "./Ongoing";
 import Completed from "./Completed";
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { Toaster } from "react-hot-toast";
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
@@ -68,7 +69,9 @@ const Dashboard = () => {
 
         <div>
           <div>
-            <h1 className="text-[#FF6C22] mb-[10px] font-bold text-2xl ml-[10px]">Create Your Task Here!</h1>
+            <h1 className="text-[#FF6C22] mb-[10px] font-bold text-2xl ml-[10px]">
+              Create Your Task Here!
+            </h1>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="flex lg:flex-row flex-col gap-2 ml-[10px]">
                 {/* task name */}
@@ -171,6 +174,7 @@ const Dashboard = () => {
             Back Home
           </button>
         </Link>
+        <Toaster />
       </div>
     </DndProvider>
   );
