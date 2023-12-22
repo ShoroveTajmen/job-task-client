@@ -39,7 +39,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.user);
         setSuccess(Swal.fire("Login Successful", "success"));
-        navigate("/");
+        navigate("/dashboard");
       })
       .catch((error) => {
         Swal.fire(error.message);

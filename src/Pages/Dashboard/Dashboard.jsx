@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import AllTask from "./AllTask";
 import useAllTask from "../../Hooks/useAxiosPublic/useAllTask/useAllTask";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
@@ -158,6 +159,11 @@ const Dashboard = () => {
           </div>
         </div>
         <AllTask></AllTask>
+        <Link to={"/"}>
+          <button className="btn ml-[10px] mt-[20px] bg-[#540375] text-white border-none font-bold">
+            Back Home
+          </button>
+        </Link>
       </div>
     </div>
   );

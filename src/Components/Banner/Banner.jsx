@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div>
-      <div className="h-[600px] w-full border border-red-600 mt-[50px] bg-gradient-to-r from-[#F9E8D9] via-[#F7B787] to-[#9FBB73] ...">
+      <div className="h-[600px] w-full mt-[50px] bg-gradient-to-r from-[#F9E8D9] via-[#F7B787] to-[#9FBB73] ...">
         <div className="flex justify-evenly items-center">
           <div className="ml-[200px] mt-[100px]">
             <img
