@@ -1,7 +1,14 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const AppUser = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+      }, []);
   return (
     <div>
-      <div className="h-[600px] w-full mt-[50px] ">
+      <div className="h-[600px] w-full mt-[50px] " data-aos="zoom-in">
         <h1 className="text-center text-[40px] font-bold text-[#DC5F00]">
           Those will be Benifited
         </h1>

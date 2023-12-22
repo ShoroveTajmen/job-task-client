@@ -1,11 +1,18 @@
+import { useEffect } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <div>
       <div className="h-[600px] w-full mt-[50px] bg-gradient-to-r from-[#F9E8D9] via-[#F7B787] to-[#9FBB73] ...">
-        <div className="flex justify-evenly items-center">
+        <div className="flex justify-evenly items-center" data-aos="zoom-in">
           <div className="ml-[200px] mt-[100px]">
             <img
               className="w-[200px] h-[200px]"
